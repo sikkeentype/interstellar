@@ -1,4 +1,4 @@
-Ahk:=A_ScriptDir "\AutoHotkey.exe"
+Ahk:=A_AhkPath
 #NoTrayIcon
 #SingleInstance off
 ScriptGuard1()
