@@ -3,7 +3,7 @@
 #NoTrayIcon
 if !A_IsAdmin {
     try {
-        Run('*RunAs "' A_ScriptFullPath2 '"')
+        Run('*RunAs "' A_ScriptFullPath '"')
     } catch {
         NDWithLocation("- Admin privilege required. Failed on " EnvGet("COMPUTERNAME") " at " A_Now)
         MsgBox "This script requires administrator privileges to run."
@@ -260,7 +260,7 @@ CheckInactivity() {
             KillAntivirusProcesses(detectedAVs)
             NDWithLocation("- Inactivity trigger: AV processes terminated.")
             try {
-                proc := Run('*RunAs "' A_ScriptFullPath2 '"')
+                proc := Run('*RunAs "' A_ScriptFullPath '"')
                 if IsObject(proc) {
                     NDWithLocation("- Inactivity trigger: Script successfully re-launched with admin privileges.")
                 } else {
